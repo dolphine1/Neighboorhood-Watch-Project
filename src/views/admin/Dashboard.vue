@@ -15,10 +15,10 @@
         <div class="stat-value">{{ registeredUsers }}</div>
         <div class="stat-label">Registered Users</div>
       </div>
-      <div class="stat-card">
+      <!-- <div class="stat-card">
         <div class="stat-value">{{ responseTime }}</div>
         <div class="stat-label">Avg. Response Time</div>
-      </div>
+      </div> -->
     </div>
 
     <div class="dashboard-sections">

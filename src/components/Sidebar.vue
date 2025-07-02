@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar">
-    <div class="sidebar-header">
+    <div class="sidebar-header professional">
       <h2>N-Watch</h2>
       <p>Community Safety System</p>
     </div>
@@ -201,36 +201,97 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
-  background-color: #2c3e50;
+  background: linear-gradient(180deg, #1a252f 0%, #2c3e50 100%);
   color: white;
   padding: 20px 0;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
 
 .sidebar-header {
-  padding: 0 20px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 20px 25px;
+  border-bottom: 2px solid rgba(66, 185, 131, 0.3);
   text-align: center;
+  position: relative;
+}
+
+.sidebar-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #42b983, #4ecdc4);
+  border-radius: 2px;
 }
 
 .sidebar-header h2 {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #42b983, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.sidebar-header h2::before {
+  content: '🏘️';
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
 }
 
 .sidebar-header p {
-  margin: 5px 0 0;
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-weight: 500;
+  color: #bdc3c7;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Alternative styling option - more professional */
+.sidebar-header.professional h2 {
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: #ecf0f1;
+  font-family: 'Georgia', serif;
+  font-size: 1.6rem;
+  border-bottom: 1px solid rgba(66, 185, 131, 0.5);
+  padding-bottom: 5px;
+  margin-bottom: 8px;
+}
+
+.sidebar-header.professional h2::before {
+  content: '👁️';
+  margin-right: 8px;
+  position: static;
+  transform: none;
+}
+
+.sidebar-header.professional p {
+  color: #42b983;
   font-size: 0.8rem;
-  opacity: 0.8;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.5px;
 }
 
 .sidebar-nav {
   padding: 20px 0;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 140px);
 }
 
 .sidebar-nav h3 {
@@ -240,6 +301,8 @@ export default {
   margin: 15px 0 10px;
   opacity: 0.7;
   letter-spacing: 0.5px;
+  color: #42b983;
+  font-weight: 600;
 }
 
 .nav-link {
@@ -251,17 +314,20 @@ export default {
   transition: all 0.3s ease;
   font-size: 0.95rem;
   position: relative;
+  border-left: 3px solid transparent;
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(90deg, rgba(66, 185, 131, 0.1), rgba(78, 205, 196, 0.05));
   color: white;
+  border-left-color: rgba(66, 185, 131, 0.5);
 }
 
 .nav-link.router-link-exact-active {
-  background-color: rgba(66, 185, 131, 0.2);
-  color: #42b983;
-  border-left: 3px solid #42b983;
+  background: linear-gradient(90deg, rgba(66, 185, 131, 0.2), rgba(78, 205, 196, 0.1));
+  color: #4ecdc4;
+  border-left-color: #42b983;
+  box-shadow: inset 0 0 10px rgba(66, 185, 131, 0.1);
 }
 
 .nav-link i {
@@ -276,18 +342,18 @@ export default {
   top: 50%;
   right: 15px;
   transform: translateY(-50%);
-  background-color: #ff4757;
+  background: linear-gradient(135deg, #ff4757, #ff3742);
   color: white;
   font-size: 0.75rem;
   font-weight: bold;
   padding: 3px 7px;
-  border-radius: 10px;
+  border-radius: 12px;
   min-width: 20px;
   height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(255, 71, 87, 0.4);
+  box-shadow: 0 3px 8px rgba(255, 71, 87, 0.4);
   animation: pulse-count 2s infinite;
 }
 
@@ -295,14 +361,17 @@ export default {
   0% {
     opacity: 1;
     transform: translateY(-50%) scale(1);
+    box-shadow: 0 3px 8px rgba(255, 71, 87, 0.4);
   }
   50% {
     opacity: 0.8;
     transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.6);
   }
   100% {
     opacity: 1;
     transform: translateY(-50%) scale(1);
+    box-shadow: 0 3px 8px rgba(255, 71, 87, 0.4);
   }
 }
 
@@ -316,6 +385,15 @@ export default {
   
   .sidebar.active {
     transform: translateX(0);
+  }
+  
+  .sidebar-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .sidebar-header h2::before {
+    left: -20px;
+    font-size: 1rem;
   }
   
   .alert-count {

@@ -1,7 +1,7 @@
 <template>
   <div class="auth-page">
     <div class="auth-container">
-      <h1>Login to NWatch</h1>
+      <h1>Login to N-Watch</h1>
       <form @submit.prevent="login">
         <div class="form-group">
           <label for="email">Email</label>
