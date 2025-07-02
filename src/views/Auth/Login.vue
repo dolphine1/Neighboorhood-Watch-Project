@@ -15,6 +15,12 @@
           {{ loading ? 'Logging in...' : 'Login' }}
         </button>
       </form>
+      
+      <!-- Forgot Password Link -->
+      <div class="forgot-password">
+        <router-link to="/forgot-password">Forgot your password?</router-link>
+      </div>
+      
       <p class="auth-footer">
         Don't have an account? <router-link to="/register">Register</router-link>
       </p>
@@ -163,6 +169,23 @@ export default {
 .btn:disabled {
   background-color: #95a5a6;
   cursor: not-allowed;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.forgot-password a {
+  color: #42b983;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
 }
 
 .auth-footer {
